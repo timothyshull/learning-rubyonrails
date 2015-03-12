@@ -1,0 +1,1647 @@
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20141212202335)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141212202335"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2014-12-12 12:24:42 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/railties-4.2.0.rc2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:24:47 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Warning. Error encountered while saving cache 1a2d331bdd92e7732690e49bb9aab4abb4767cf4/scaffolds.css.scssc: can't dump anonymous class #<Class:0x007f9eec8bfca8>
+
+Warning. Error encountered while saving cache 1a2d331bdd92e7732690e49bb9aab4abb4767cf4/users.css.scssc: can't dump anonymous class #<Class:0x007f9eec8bfca8>
+
+Completed 200 OK in 562ms (Views: 559.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:24:47 -0800
+
+
+Started GET "/users/new" for ::1 at 2014-12-12 12:24:50 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (17.3ms)
+  Rendered users/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 78ms (Views: 73.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2014-12-12 12:25:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JeZgGkiyOlZyAlu9OYrkVvYoBJ8qw12GC6uoFrVmta/A0vbW9EdYYtbBSssWgIWc3zSBGR1Zd7JlDr9H0x7rDw==", "user"=>{"name"=>"Blah", "email"=>"Blah"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Blah"], ["email", "Blah"], ["created_at", "2014-12-12 20:25:00.543274"], ["updated_at", "2014-12-12 20:25:00.543274"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2014-12-12 12:25:00 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 68ms (Views: 59.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:25:00 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:25:03 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2014-12-12 12:25:07 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2014-12-12 12:25:15 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UW3tm+S+o5AefCXM6bbFaigiMCoZfCvL1/hWQGAIAxC0WXtXWEvBpLq/NLrGvKSgAT61rC7mAf+5XUERBnBdsA==", "user"=>{"name"=>"blah2", "email"=>"blah2"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "blah2"], ["email", "blah2"], ["created_at", "2014-12-12 20:25:15.613220"], ["updated_at", "2014-12-12 20:25:15.613220"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for ::1 at 2014-12-12 12:25:15 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 67ms (Views: 66.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:25:15 -0800
+
+
+Started GET "/users/2/edit" for ::1 at 2014-12-12 12:25:32 -0800
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:25:32 -0800
+
+
+Started PATCH "/users/2" for ::1 at 2014-12-12 12:30:02 -0800
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aSbwYqnkwx7nP244ILDgGmd36am+dJtWZYM6IPoaJ1qMEmauFRGhKkP8f04PuoHQTmtsL4nusWILJi1xnGJ5+g==", "user"=>{"name"=>"blah2", "email"=>"blah2"}, "commit"=>"Update User", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for ::1 at 2014-12-12 12:30:02 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:30:02 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:30:05 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:31:05 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:31:05 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:31:06 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 63ms (Views: 62.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:31:06 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:32:08 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:32:08 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:32:09 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:32:09 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 12:33:22 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 12:33:22 -0800
+
+
+Started GET "/home" for ::1 at 2014-12-12 12:55:03 -0800
+
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+
+
+Started GET "/home" for ::1 at 2014-12-12 12:55:46 -0800
+
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
+
+
+Started PUT "/console/repl_sessions/2" for ::1 at 2014-12-12 12:55:47 -0800
+
+
+Started PUT "/console/repl_sessions/2" for ::1 at 2014-12-12 12:55:48 -0800
+
+
+Started PUT "/console/repl_sessions/2" for ::1 at 2014-12-12 12:55:49 -0800
+
+
+Started GET "/home" for ::1 at 2014-12-12 12:56:15 -0800
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: :home` to `controller: :home`. (called from block in <top (required)> at /Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/config/routes.rb:3)
+
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (21.6ms)
+
+
+Started GET "/home" for ::1 at 2014-12-12 12:57:53 -0800
+
+ActionController::RoutingError (No route matches [GET] "/home"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0.beta2) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0.beta2) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0.beta2) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0.rc2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0.rc2) lib/rails/application.rb:164:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0.beta2) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0.beta2) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/application" for ::1 at 2014-12-12 12:58:00 -0800
+
+ActionController::RoutingError (No route matches [GET] "/application"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0.beta2) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0.beta2) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0.beta2) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0.rc2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0.rc2) lib/rails/application.rb:164:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0.beta2) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0.beta2) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (13.4ms)
+
+
+Started GET "/home" for ::1 at 2014-12-12 12:59:33 -0800
+
+SyntaxError (/Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  get 'home' to "application/application"
+               ^):
+  config/routes.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.4ms)
+
+
+Started GET "/home" for ::1 at 2014-12-12 13:00:01 -0800
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: :application/application` to `controller: :application/application`. (called from block in <top (required)> at /Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/config/routes.rb:4)
+
+ActionController::RoutingError (uninitialized constant Application):
+  activesupport (4.2.0.rc2) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.0.rc2) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.0.rc2) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.0.rc2) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.0.rc2) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.0.rc2) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (4.2.0.rc2) lib/action_dispatch/routing/route_set.rb:59:in `controller'
+  actionpack (4.2.0.rc2) lib/action_dispatch/routing/route_set.rb:38:in `serve'
+  actionpack (4.2.0.rc2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0.rc2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0.rc2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0.rc2) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0.beta2) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0.beta2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0.beta2) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0.beta2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0.beta2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0.rc2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0.rc2) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0.rc2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0.rc2) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0.rc2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0.rc2) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0.rc2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0.rc2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0.rc2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0.beta2) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0.beta2) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0.rc2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0.beta2) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0.rc2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0.rc2) lib/rails/application.rb:164:in `call'
+  rack (1.6.0.beta2) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0.beta2) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0.beta2) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (16.9ms)
+
+
+Started GET "/home" for ::1 at 2014-12-12 13:00:45 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 120ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:00:45 -0800
+
+
+Started GET "/home" for ::1 at 2014-12-12 13:01:18 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 115ms (Views: 114.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:01:18 -0800
+
+
+Started GET "/home" for ::1 at 2014-12-12 13:01:41 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 114ms (Views: 113.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:01:41 -0800
+
+
+Started GET "/home" for ::1 at 2014-12-12 13:02:02 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 113ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:02:02 -0800
+
+
+Started GET "/" for ::1 at 2014-12-12 13:02:54 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 108ms (Views: 107.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:02:54 -0800
+
+
+Started GET "/" for ::1 at 2014-12-12 13:03:05 -0800
+Processing by ApplicationController#application as HTML
+  Rendered layouts/application.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 114ms (Views: 113.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:03:05 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20141212210641)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141212210641"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:17:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting ';' or '\n'
+  def index, to: 'layouts#testlayout'
+            ^
+/Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/app/controllers/users_controller.rb:74: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/users_controller.rb:6: syntax error, unexpected ',', expecting ';' or '\n'
+  app/controllers/users_controller.rb:74: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:18:07 -0800
+
+SyntaxError (/Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/app/controllers/users_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+    to: 'layouts#testlayout'
+       ^):
+  app/controllers/users_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:18:22 -0800
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `to' for #<UsersController:0x007fdd126aabc0>):
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:19:00 -0800
+
+SyntaxError (/Users/timothyshull/Programming/WebDev/RubyRails/MyProjects/railstut2/app/controllers/users_controller.rb:8: syntax error, unexpected ':', expecting keyword_end
+    render: 'layouts#testlayout'
+           ^):
+  app/controllers/users_controller.rb:8: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:22:34 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/testlayout (5.2ms)
+Warning. Error encountered while saving cache 1a2d331bdd92e7732690e49bb9aab4abb4767cf4/microposts.css.scssc: can't dump anonymous class #<Class:0x007fdd0ec434c8>
+
+Completed 200 OK in 285ms (Views: 282.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:22:35 -0800
+
+
+Started GET "/users/" for ::1 at 2014-12-12 13:33:54 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/testlayout (6.3ms)
+Warning. Error encountered while saving cache 1a2d331bdd92e7732690e49bb9aab4abb4767cf4/custom.css.scssc: can't dump anonymous class #<Class:0x007f7f5c367738>
+
+Completed 200 OK in 178ms (Views: 169.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:33:54 -0800
+
+
+Started GET "/microposts/new" for ::1 at 2014-12-12 13:34:45 -0800
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (45.4ms)
+  Rendered microposts/new.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 122ms (Views: 116.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:34:45 -0800
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:35:01 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zPP4RjM7jy25gn8nF5HD4QpWj3DySisNMJ4JU7Q/2Rwpx26Kj87tGR1BblE4m6IrI0oK9sXQATleOx4C0keHvA==", "micropost"=>{"content"=>"this is my new post", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "this is my new post"], ["user_id", 1], ["created_at", "2014-12-12 21:35:01.412067"], ["updated_at", "2014-12-12 21:35:01.412067"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/microposts/1
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/microposts/1" for ::1 at 2014-12-12 13:35:01 -0800
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMicropost Load (0.2ms)[0m  SELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered microposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 76ms (Views: 69.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:35:01 -0800
+
+
+Started GET "/microposts" for ::1 at 2014-12-12 13:39:42 -0800
+Processing by MicropostsController#index as HTML
+  [1m[36mMicropost Load (0.3ms)[0m  [1mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 103ms (Views: 95.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2014-12-12 13:39:57 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/testlayout (4.2ms)
+Completed 200 OK in 76ms (Views: 70.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:39:57 -0800
+
+
+Started GET "/users/new" for ::1 at 2014-12-12 13:40:00 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/testlayout (3.8ms)
+Completed 200 OK in 93ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:40:19 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SkU+EU3IxKY/ZIheWjApzJo+qW3/0aZQ6TcCHOUPSqivcajd8T2mkpunmSh1OkgGsyIs68hLjGSHkhVNg3cUCA==", "user"=>{"name"=>"nextuser", "email"=>"nextuser@nextuser.com"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "nextuser"], ["email", "nextuser@nextuser.com"], ["created_at", "2014-12-12 21:40:19.409895"], ["updated_at", "2014-12-12 21:40:19.409895"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/5" for ::1 at 2014-12-12 13:40:19 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered users/show.html.erb within layouts/testlayout (0.7ms)
+Completed 200 OK in 80ms (Views: 78.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:40:19 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 13:40:23 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/testlayout (2.4ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2014-12-12 13:40:35 -0800
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.1ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 91ms (Views: 90.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:40:35 -0800
+
+
+Started GET "/microposts/new" for ::1 at 2014-12-12 13:40:38 -0800
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (1.7ms)
+  Rendered microposts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:40:57 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (2.6ms)
+  Rendered microposts/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 87ms (Views: 85.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:40:57 -0800
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:43:00 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (3.1ms)
+  Rendered microposts/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:43:00 -0800
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:43:37 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (15.3ms)
+  Rendered microposts/new.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `text_label' for #<ActionView::Helpers::FormBuilder:0x007f7f5b3cc3a0>):
+  app/views/microposts/_form.html.erb:20:in `block in _app_views_microposts__form_html_erb__1117298866041476109_70092484132500'
+  app/views/microposts/_form.html.erb:1:in `_app_views_microposts__form_html_erb__1117298866041476109_70092484132500'
+  app/views/microposts/new.html.erb:3:in `_app_views_microposts_new_html_erb__2497572503855278102_70092554471420'
+  app/controllers/microposts_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/microposts_controller.rb:29:in `create'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (43.7ms)
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:44:14 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (3.9ms)
+  Rendered microposts/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 10ms
+
+NoMethodError (undefined method `name' for #<Micropost:0x007f7f5d7f0178>):
+  app/views/microposts/_form.html.erb:20:in `block in _app_views_microposts__form_html_erb__1117298866041476109_70092502997660'
+  app/views/microposts/_form.html.erb:1:in `_app_views_microposts__form_html_erb__1117298866041476109_70092502997660'
+  app/views/microposts/new.html.erb:3:in `_app_views_microposts_new_html_erb__2497572503855278102_70092554471420'
+  app/controllers/microposts_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/microposts_controller.rb:29:in `create'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (25.8ms)
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:45:08 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (3.4ms)
+  Rendered microposts/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 10ms
+
+NoMethodError (undefined method `name' for #<Micropost:0x007f7f6381a170>):
+  app/views/microposts/_form.html.erb:20:in `block in _app_views_microposts__form_html_erb__1117298866041476109_70092502997660'
+  app/views/microposts/_form.html.erb:1:in `_app_views_microposts__form_html_erb__1117298866041476109_70092502997660'
+  app/views/microposts/new.html.erb:3:in `_app_views_microposts_new_html_erb__2497572503855278102_70092554471420'
+  app/controllers/microposts_controller.rb:34:in `block (2 levels) in create'
+  app/controllers/microposts_controller.rb:29:in `create'
+
+
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.6ms)
+  Rendered /Users/timothyshull/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (26.6ms)
+
+
+Started POST "/microposts" for ::1 at 2014-12-12 13:45:16 -0800
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WQX0S0I54An2jQxAvfhLa74yAYQpxUT3DAcKfXEw40a8MWKH/syCPVJOHTaS8iqhly6EAh5fbsNioh0sF0i95g==", "micropost"=>{"content"=>"", "user_id"=>"5"}, "commit"=>"Create Micropost"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered microposts/_form.html.erb (2.8ms)
+  Rendered microposts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 115ms (Views: 112.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:45:16 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 13:46:30 -0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/testlayout (5.5ms)
+Completed 200 OK in 79ms (Views: 74.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:46:30 -0800
+
+
+Started GET "/users/new" for ::1 at 2014-12-12 13:46:33 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/testlayout (2.3ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:46:39 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V3dNnT5wckvIYD0vjjn50e9IBlE+Na5QDRZPgo+AK6qyQ9tRgoUQf2yjLFmhM5gbxlSD1wmvhGRjs1jT6fh1Cg==", "user"=>{"name"=>"", "email"=>"asdf"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/testlayout (3.6ms)
+Completed 200 OK in 101ms (Views: 97.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:46:39 -0800
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:48:07 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5kQj2aeP75hOVrCsKnjwAX/secfxpdI/Iloxs4aFykEDcLUVG3qNrOqVodoFcpHLVvD8QcY/+AtM/ybi4P2U4Q==", "user"=>{"name"=>"joe", "email"=>"asdf"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/testlayout (2.5ms)
+Completed 200 OK in 80ms (Views: 69.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:48:07 -0800
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:48:16 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T+FhKe/T+o4Emt1SMbXLs+FbOEzeXvgFRKdMiQ27boOq1fflUyaYuqBZzCQev6p5yEe9yunE0jEqAlvYa8MwIw==", "user"=>{"name"=>"joe", "email"=>"tim@tim.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "joe"], ["email", "tim@tim.com"], ["created_at", "2014-12-12 21:48:16.617741"], ["updated_at", "2014-12-12 21:48:16.617741"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/6" for ::1 at 2014-12-12 13:48:16 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/testlayout (0.4ms)
+Completed 200 OK in 93ms (Views: 92.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:48:16 -0800
+
+
+Started GET "/users" for ::1 at 2014-12-12 13:48:20 -0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/testlayout (2.7ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2014-12-12 13:48:21 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/testlayout (2.6ms)
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:48:29 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rBPF9CqtpNA0fMHVFAQ1NZc+z0VB5jEu1tUcA4tZqx5JJ1M4lljG5JC/0KM7DlT/viJKw3Z8Gxq4cAtS7SH1vg==", "user"=>{"name"=>"joe", "email"=>"joe@joe"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.1ms)
+  Rendered users/new.html.erb within layouts/testlayout (3.5ms)
+Completed 200 OK in 80ms (Views: 77.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:48:29 -0800
+
+
+Started POST "/users" for ::1 at 2014-12-12 13:48:38 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qD8XoGKtKHdr0xPc1OFIl0+4j2pxfXyVuHYhenVApIZNC4Fs3lhKQ88QAqr76yldZqQK7EbnVqHW0zYrEzj6Jg==", "user"=>{"name"=>"joe", "email"=>"joe@joe.com34567"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (2.2ms)
+  Rendered users/new.html.erb within layouts/testlayout (3.1ms)
+Completed 200 OK in 87ms (Views: 83.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/microposts.css?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/custom.css?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/users.css?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/users.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/microposts.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2014-12-12 13:48:38 -0800

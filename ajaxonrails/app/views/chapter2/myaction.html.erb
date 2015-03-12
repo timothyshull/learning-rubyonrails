@@ -1,0 +1,25 @@
+<h1>Chapter2#myaction</h1>
+<p>Find me in app/views/chapter2/myaction.html.erb</p>
+<p><a href="#" onclick="alert('Hello !');">Inline alert(  )</a></p>
+<p><ahref="#" onclick="customAlert( );">Callcustomfunction</a></p> <script type="text/javascript">
+  function customAlert(  ) {
+      alert('Hello from a custom function.');
+    }
+  </script>
+<p><a href="#" onclick="serverSideAlert(  );">Call server-side function</a></p>
+<script type="text/javascript">
+  function serverSideAlert(  ) {
+    var request = new XMLHttpRequest(  );
+    request.open('get', '/chapter2/myresponse', false);
+    request.send(null);
+    alert(request.responseText);
+} </script>
+<script src="/javascripts/prototype.js" type="text/javascript">
+</script>
+<p><a href="#" onclick="prototypeAlert(  );">Call with Prototype</a></p>
+<script type="text/javascript">
+ function prototypeAlert(  ) {
+  new Ajax.Request('/chapter2/myresponse', { onSuccess: function(request) {
+   alert(request.responseText);
+  }})
+} </script>

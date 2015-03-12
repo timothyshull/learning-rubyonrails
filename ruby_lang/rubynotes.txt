@@ -1,0 +1,261 @@
+puts for print to console
+
+#{} - string interpolation & evaluation within strings, including variable replacement
+
+can use hash table string interpolation by setting a variable equal to a string and then using name value pairs corresponding to names in the string in the hash table i.e.
+
+formatter = "%{first} %{second} %{third} %{fourth}"
+
+puts formatter % {first: 1, second: 2, third: 3, fourth: 4}
+
+prints 
+1 2 3 4
+
+strings also use \ escape sequences
+
+print vs. puts - puts adds newline automatically
+
+gets takes input 
+chomp removes whitespace with no arguments or removes arguments from string
+
+to_i method converts string to integer
+
+use ARGV to store command line arguments i.e.
+var1, var2, var3 = ARGV will unpack command line arguments and store them (must be in that order)
+
+can also call ARGV.first, etc ARGV is array of command line strings, ARGF is the stream and assumes argv contains filenames, read files with ARGF.read
+
+can use var = $stdin.gets.chomp to assign user cmd line input to variables
+
+use open(filename) and assign to variable to get contents of a file
+
+file commands:
+close (with save)
+read
+readline
+truncate (empties file)
+write('string') - writes string to file
+
+File.exist?(file) checks for existence of a file
+
+Functions
+def funcname(params)
+	process_params
+	return
+end
+
+ri (Ruby Interactive) and RDoc - ri command views documentation and RDoc files parse contents to provide documentation for your packages, scripts, programs, etc.
+
+seek goes to a spot in a file/directory
+
+can use <<END ... END to define multiline variable
+
+can define a file as a module with a name and then require that module to access methods within the module
+
+if (conditional test)
+	do_this
+end
+
+if (conditional test)
+	do_this
+else
+	do_this
+end
+
+if (conditional test)
+	do_this
+elsif (conditional test)
+	do_this
+else
+	do_this
+end
+
+nesting
+
+if (conditional test)
+	if (conditional test)
+		do_this
+	else
+		do_this
+	end
+else
+	do_this
+end
+
+[item1, item2, item3]
+
+For loops
+
+traditional - 
+
+for num in range do
+	do_this_with num
+end
+
+Preferred Ruby style - 
+
+array.each do |elem|
+	do_this_with elem
+end
+
+or this -
+
+array.each {|i| do_this_with i}
+
+Range Operator -
+(0..n).each do |i|
+	array.push(i)
+end
+
+while condition_is_true
+	do_this
+	change_condition_param
+end
+
+Other Loops
+
+for k in 1..10 do 
+   puts "Number #{k}" 
+end
+
+10.times do |k|
+   puts "Number #{k+1}"   
+   #   times will start at 0, so on the 10th iteration, k is equal to 9
+end
+
+1.upto(10){ |k| puts "Number #{k}"}
+
+can use include? method with arrays to check if an element is in the array
+
+1.Every if-statement must have an else.
+If this else should never run because it doesn't make sense, then you must use a die function in the else that prints out an error message and dies, just like we did in the last exercise. This will find many errors.
+Never nest if-statements more than two deep and always try to do them one deep.
+Treat if-statements like paragraphs, where each if-elsif-else grouping is like a set of sentences. Put blank lines before and after.
+Your boolean tests should be simple. If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.
+
+
+BEGIN	Run this block when the script starts.	BEGIN { puts "hi" }
+
+END	Run this block when the script is done.	END { puts "hi" }
+
+alias	Create another name for a function.	alias X Y
+
+and	Logical and, but lower priority than &&.	puts "Hello" and "Goodbye"
+
+begin	Start a block, usually for exceptions.	begin end
+
+break	Break out of a loop right now.	while true; break; end
+
+case	Case style conditional, like an if.	case X; when Y; else; end
+
+class	Define a new class.	class X; end
+
+def	Define a new function.	def X(); end
+
+defined?	Is this class/function/etc. defined already?	defined? Class == "constant"
+
+do	Create a block that maybe takes a parameter.	(0..5).each do |x| puts x end
+
+else	Else conditional.	if X; else; end
+
+elsif	Else if conditional	if X; elsif Y; else; end
+
+end	Ends blocks, functions, classes, everything.	begin end # many others
+
+ensure	Run this code whether an exception happens or not.	begin ensure end
+
+for	For loop syntax. The .each syntax is preferred.	for X in Y; end
+
+if	If conditional.	if X; end
+
+in	In part of for-loops.	for X in Y; end
+
+module	Define a new module.	module X; end
+
+next	Skip to the next element of a .each iterator.	(0..5).each {|y| next }
+
+not	Logical not. But use ! instead.	not true == false
+
+or	Logical or.	puts "Hello" or "Goodbye"
+
+redo	Rerun a code block exactly the same.	(0..5).each {|i| redo if i > 2}
+
+rescue	Run this code if an exception happens.	begin rescue X; end
+
+retry	In a rescue clause, says to try the block again.	(0..5).each {|i| retry if i > 2}
+
+return	Returns a value from a function. Mostly optional.	return X
+
+self	The current object, class, or module.	defined? self == "self"
+x
+super	The parent class of this class.	super
+
+then	Can be used with if optionally.	if true then puts "hi" end
+
+undef	Remove a function definition from a class.	undef X
+
+unless	Inverse of if.	unless false then puts "not" end
+
+until	Inverse of while, execute block as long as false.	until false; end
+
+when	Part of case conditionals.	case X; when Y; else; end
+
+while	While loop.	while true; end
+
+yield	Pause and transfer control to the code block.	yield
+
+
+Operations on Arrays
+
+push-add an array element to the end of array 
+pop-remove last element from array
+join-returns a string composed of the array elements
+length-returns # of elements in array
+slice-takes a range and returns a subarray, or a single element
+
+split-takes a string and returns an array of elements 
+
+
+Hashes
+
+a container for key value pairs
+
+
+
+Classes
+
+Clases are like modules, you can store data and functions in them and access these using the dot operator
+
+Instantiation - var = Class.new()
+
+# dict style
+mystuff['apples']
+
+# module style
+MyStuff.apples()
+puts MyStuff::TANGERINE
+
+# class style
+thing = MyStuff.new()
+thing.apples()
+puts thing.tangerine
+
+instance - particular instance of object type (class) in question
+
+@ - instance variable, a variable specifically created for that instance of the object
+
+class X(Y)
+"Make a class named X that is-a Y."
+class X(object): def initialize(J)
+"class X has-a initialize that takes a J parameter."
+class X(object): def M(J)
+"class X has-a function named M that takes a J parameter."
+foo = X()
+"Set foo to an instance of class X."
+foo.M(J)
+"From foo get the M function, and call it with parameter J."
+foo.K = Q
+"From foo get the K attribute and set it to Q."
+
+
+
